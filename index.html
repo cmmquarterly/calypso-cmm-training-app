@@ -47,15 +47,20 @@
         function loadChapter(ch) {
             let html = `<button class="home-btn" onclick="showHome()">← Home</button><h1>Chapter ${ch}</h1>`;
             if (ch === 1) {
-                html += `<p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. Without a consistent reference system, it would be impossible to measure a part with repeatability or to communicate tolerances effectively.</p>
+                html += `<p><strong>Introduction</strong></p>
+                <p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. Without a consistent reference system, it would be impossible to measure a part with repeatability or to communicate tolerances effectively.</p>
                 <p><strong>Defining a Datum</strong></p>
                 <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. The datum itself is never physically touched — what we touch is a datum feature, a physical part surface intended to represent the theoretical datum.</p>
                 <p><strong>Datum Features and Targets</strong></p>
-                <p>Not every feature is used as a whole. Datum targets are specific areas (pads, points, or lines) used when full-surface contact is not practical.</p>`;
+                <p>Not every feature is used as a whole. Datum targets are specific areas (pads, points, or lines) used when full-surface contact is not practical.</p>
+                <p><strong>ISO vs ASME Standards</strong></p>
+                <p>Both standards define datums similarly but differ in terminology and application details.</p>`;
             } else if (ch === 2) {
-                html += `<p><strong>The 3-2-1 Rule Explained</strong></p>
+                html += `<p><strong>The Purpose of a DRF</strong></p>
+                <p>A DRF serves three critical roles: Stability, Functionality, Traceability.</p>
+                <p><strong>The 3-2-1 Rule Explained</strong></p>
                 <p>Primary Datum (3 points): Establishes a plane. Secondary (2 points), Tertiary (1 point). This method fully constrains a part without over-defining it.</p>
-                <p>DRFs are digitally simulated on CMMs using measured points to calculate best-fit planes, axes, or points.</p>`;
+                <p>DRFs are digitally simulated on CMMs using measured points.</p>`;
             } else if (ch === 3) {
                 html += `<p><strong>Common Datum Types</strong></p>
                 <p>Planes, Axes, Points, Lines or Slots, Spheres.</p>
@@ -74,7 +79,7 @@
             document.getElementById('mainContent').innerHTML = `
                 <button class="home-btn" onclick="showHome()">← Home</button>
                 <h1>CMM Basics</h1>
-                <p>Core principles coming soon with more detailed content.</p>
+                <p>Core principles coming soon.</p>
             `;
         }
     </script>
