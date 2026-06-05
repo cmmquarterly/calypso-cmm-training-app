@@ -49,14 +49,36 @@
             if (ch === 1) {
                 html += `<p><strong>Introduction</strong></p>
                 <p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. Without a consistent reference system, it would be impossible to measure a part with repeatability or to communicate tolerances effectively between design, manufacturing, and quality teams.</p>
+                <p>This chapter lays the groundwork for everything that follows. We will define what a datum is, distinguish between the ideal world of geometric dimensioning and tolerancing (GD&T) and the reality of physical parts, and introduce the role of datums in functional design.</p>
                 <p><strong>Defining a Datum</strong></p>
                 <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. It can be thought of as an anchor point, axis, or plane. Importantly, the datum itself is never physically touched — what we touch is a datum feature, a physical part surface intended to represent the theoretical datum.</p>
+                <p>• Datum: The theoretical, perfect reference.<br>
+                • Datum feature: The actual feature (e.g., a machined surface, bore, or slot) intended to establish that datum.<br>
+                • Simulated datum: The best-fit geometric element calculated or derived from measurement data to represent the datum during inspection.</p>
+                <p><strong>Example:</strong> A flat machined face on a housing may be identified as “Datum A” on a print. The concept of Datum A is the perfect mathematical plane that would exist if the surface had no waviness, no bumps, and no deviation at all. The CMM or inspection fixture creates a simulated plane from the real surface that serves as Datum A for all further measurement.</p>
                 <p><strong>Datum Features and Targets</strong></p>
                 <p>Not every feature is used as a whole. Sometimes, only certain regions or points on a part are designated to establish a datum. These are called datum targets.</p>
+                <p>• Datum feature: The entire bore, surface, or slot acts as a datum.<br>
+                • Datum target: Specific areas (pads, points, or lines) define the datum, often used in aerospace, large assemblies, or sheet metal where full-surface contact is not practical.</p>
+                <p><strong>Use Case:</strong> Common in aerospace panels, three pads may serve as a functional reference instead of relying on a large, flexible surface. This reduces variability caused by material flexibility and ensures functional alignment.</p>
                 <p><strong>Datums in ISO vs. ASME Standards</strong></p>
-                <p>While both ISO 5459 and ASME Y14.5 define datums and datum reference frames, they differ in terminology and application details.</p>`;
+                <p>While both ISO 5459 and ASME Y14.5 define datums and datum reference frames, they differ in terminology and application details.</p>
+                <p><strong>Functional Role of Datums</strong></p>
+                <p>Datums are not arbitrary. They are chosen to reflect how a part interfaces with the real world. A proper datum structure:</p>
+                <p>1. Stabilizes the part for measurement.<br>
+                2. Replicates functional assembly conditions.<br>
+                3. Controls degrees of freedom (preventing unwanted translation or rotation).<br>
+                4. Provides a consistent reference across the design-manufacturing-inspection pipeline.</p>
+                <p><strong>Reality vs. Ideal: Dealing with Imperfections</strong></p>
+                <p>No surface is truly flat, no hole is perfectly round, and no feature is manufactured without some deviation. Inspection systems therefore must establish a simulated datum — often a mathematical best-fit plane, axis, or point set derived from measured data points.</p>
+                <p><strong>Key Takeaways</strong></p>
+                <p>• A datum is the foundation of all geometric measurement.<br>
+                • It is theoretical, perfect, and must be represented via a physical feature.<br>
+                • Both standards (ISO, ASME) treat datums similarly but with important detail differences.<br>
+                • The ultimate goal of a datum system is functional correlation — ensuring measurements match how the part behaves in its real-world assembly.</p>
+                <p><strong>Tip:</strong> When in doubt, ask: Does this datum structure represent how the part actually functions? If the answer is no, reconsider the datum selection before proceeding with alignment or inspection.</p>`;
             } else {
-                html += `<p>Content for Chapter ${ch} coming soon.</p>`;
+                html += `<p>Full content for Chapter ${ch} coming soon. Let me know which chapter to expand next.</p>`;
             }
             document.getElementById('mainContent').innerHTML = html;
         }
