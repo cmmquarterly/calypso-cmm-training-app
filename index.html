@@ -45,7 +45,19 @@
         }
 
         function loadChapter(ch) {
-            let html = `<button class="home-btn" onclick="showHome()">← Home</button><h1>Chapter ${ch}</h1><p>Paste the full text from your PDF here for this chapter.</p>`;
+            let html = `<button class="home-btn" onclick="showHome()">← Home</button><h1>Chapter ${ch}</h1>`;
+            if (ch === 1) {
+                html += `<p><strong>Introduction</strong></p>
+                <p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. Without a consistent reference system, it would be impossible to measure a part with repeatability or to communicate tolerances effectively between design, manufacturing, and quality teams.</p>
+                <p><strong>Defining a Datum</strong></p>
+                <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. It can be thought of as an anchor point, axis, or plane. Importantly, the datum itself is never physically touched — what we touch is a datum feature, a physical part surface intended to represent the theoretical datum.</p>
+                <p><strong>Datum Features and Targets</strong></p>
+                <p>Not every feature is used as a whole. Sometimes, only certain regions or points on a part are designated to establish a datum. These are called datum targets.</p>
+                <p><strong>Datums in ISO vs. ASME Standards</strong></p>
+                <p>While both ISO 5459 and ASME Y14.5 define datums and datum reference frames, they differ in terminology and application details.</p>`;
+            } else {
+                html += `<p>Content for Chapter ${ch} coming soon.</p>`;
+            }
             document.getElementById('mainContent').innerHTML = html;
         }
 
