@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calypso CMM Training</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; display: flex; height: 100vh; background: #f5f5f5; }
+        .sidebar { width: 320px; background: #1e3a8a; color: white; padding: 20px; overflow-y: auto; }
+        .main { flex: 1; padding: 20px; overflow-y: auto; background: white; }
+        .topic { padding: 12px; cursor: pointer; border-bottom: 1px solid #ccc; }
+        .topic:hover, .topic.active { background: #3b82f6; }
+        .home-btn { padding: 10px 15px; background: #0066cc; color: white; border: none; border-radius: 6px; margin-bottom: 15px; cursor: pointer; }
+        .chapter { padding: 12px; margin: 8px 0; background: #f0f0f0; border-radius: 6px; cursor: pointer; }
+        .chapter:hover { background: #ddd; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Calypso CMM Training</h2>
+        <div class="topic" onclick="showAlignments()">Alignments & Part Setup</div>
+        <div class="topic" onclick="showBasics()">CMM Basics</div>
+    </div>
+
+    <div class="main" id="mainContent">
+        <h1>Welcome to Calypso CMM Training</h1>
+        <p>Select a topic from the left sidebar.</p>
+    </div>
+
+    <script>
+        function showHome() {
+            document.getElementById('mainContent').innerHTML = `<h1>Welcome to Calypso CMM Training</h1><p>Select a topic from the left sidebar.</p>`;
+        }
+
+        function showAlignments() {
+            document.getElementById('mainContent').innerHTML = `
+                <button class="home-btn" onclick="showHome()">← Home</button>
+                <h1>Mastering Datums & CMM Alignments in Calypso</h1>
+                <h2>Table of Contents</h2>
+                <div class="chapter" onclick="loadChapter(1)">1. What is a Datum?</div>
+                <div class="chapter" onclick="loadChapter(2)">2. Datum Reference Frames (DRF)</div>
+                <div class="chapter" onclick="loadChapter(3)">3. Datum Types & Their Behavior</div>
+                <div class="chapter" onclick="loadChapter(4)">4. Establishing Basic Alignments</div>
+            `;
+        }
+
+        function loadChapter(ch) {
+            let html = `<button class="home-btn" onclick="showHome()">← Home</button><h1>Chapter ${ch}</h1>`;
+            if (ch === 1) {
+                html += `<p><strong>Defining a Datum</strong></p>
+                <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. The datum itself is never physically touched — what we touch is a datum feature, a physical part surface intended to represent the theoretical datum.</p>
+                <p><strong>Datum Features and Targets</strong></p>
+                <p>Not every feature is used as a whole. Datum targets are specific areas (pads, points, or lines) used when full-surface contact is not practical.</p>
+                <p><strong>ISO vs ASME Standards</strong></p>
+                <p>Both standards define datums similarly but differ in terminology and application details.</p>`;
+            } else if (ch === 2) {
+                html += `<p><strong>The 3-2-1 Rule Explained</strong></p>
+                <p>Primary Datum (3 points): Establishes a plane. Secondary (2 points), Tertiary (1 point).</p>
+                <p>DRFs are digitally simulated on CMMs using measured points.</p>`;
+            } else if (ch === 3) {
+                html += `<p><strong>Common Datum Types</strong></p>
+                <p>Planes, Axes, Points, Lines or Slots, Spheres.</p>
+                <p><strong>Material Condition Modifiers</strong></p>
+                <p>RFS, MMC, LMC and their impact on datum shift and stability.</p>`;
+            } else if (ch === 4) {
+                html += `<p><strong>Step-by-Step Basic Alignment Workflow</strong></p>
+                <p>Identify DRF, Probe features, Construct simulated datums, Establish DRF, Verify stability.</p>`;
+            }
+            document.getElementById('mainContent').innerHTML = html;
+        }
+
+        function showBasics() {
+            document.getElementById('mainContent').innerHTML = `
+                <button class="home-btn" onclick="showHome()">← Home</button>
+                <h1>CMM Basics</h1>
+                <p>Core principles coming soon.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
