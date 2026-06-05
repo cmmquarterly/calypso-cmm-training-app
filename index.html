@@ -48,29 +48,25 @@
             let html = `<button class="home-btn" onclick="showHome()">← Home</button><h1>Chapter ${ch}</h1>`;
             if (ch === 1) {
                 html += `<p><strong>Introduction</strong></p>
-                <p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. Without a consistent reference system, it would be impossible to measure a part with repeatability or to communicate tolerances effectively.</p>
+                <p>Every measurement needs a reference. In coordinate metrology, that reference is called a datum. ...</p>
                 <p><strong>Defining a Datum</strong></p>
-                <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. The datum itself is never physically touched — what we touch is a datum feature, a physical part surface intended to represent the theoretical datum.</p>
+                <p>A datum is an ideal, theoretically exact geometric reference from which measurements are made. The datum itself is never physically touched — what we touch is a datum feature.</p>
                 <p><strong>Datum Features and Targets</strong></p>
-                <p>Not every feature is used as a whole. Datum targets are specific areas (pads, points, or lines) used when full-surface contact is not practical.</p>
-                <p><strong>ISO vs ASME Standards</strong></p>
-                <p>Both standards define datums similarly but differ in terminology and application details.</p>`;
+                <p>Datum targets are specific areas (pads, points, or lines) used when full-surface contact is not practical.</p>
+                <p><strong>Functional Role of Datums</strong></p>
+                <p>Stabilizes the part, replicates assembly conditions, controls degrees of freedom.</p>`;
             } else if (ch === 2) {
-                html += `<p><strong>The Purpose of a DRF</strong></p>
-                <p>A DRF serves three critical roles: Stability, Functionality, Traceability.</p>
-                <p><strong>The 3-2-1 Rule Explained</strong></p>
-                <p>Primary Datum (3 points): Establishes a plane. Secondary (2 points), Tertiary (1 point). This method fully constrains a part without over-defining it.</p>
+                html += `<p><strong>The 3-2-1 Rule Explained</strong></p>
+                <p>Primary Datum (3 points): Establishes a plane. Secondary (2 points), Tertiary (1 point).</p>
                 <p>DRFs are digitally simulated on CMMs using measured points.</p>`;
             } else if (ch === 3) {
                 html += `<p><strong>Common Datum Types</strong></p>
                 <p>Planes, Axes, Points, Lines or Slots, Spheres.</p>
                 <p><strong>Material Condition Modifiers</strong></p>
-                <p>RFS, MMC, LMC and their impact on datum shift and stability.</p>`;
+                <p>RFS, MMC, LMC and their impact on datum shift.</p>`;
             } else if (ch === 4) {
-                html += `<p><strong>Manual vs CAD-based Alignment</strong></p>
-                <p>Manual for initial positioning. CAD for precision.</p>
-                <p><strong>Step-by-Step Basic Alignment Workflow</strong></p>
-                <p>1. Identify the DRF from the drawing. 2. Probe the datum features. 3. Construct simulated datums. 4. Establish the DRF. 5. Verify stability.</p>`;
+                html += `<p><strong>Step-by-Step Basic Alignment Workflow</strong></p>
+                <p>Identify DRF, Probe features, Construct simulated datums, Establish DRF, Verify stability.</p>`;
             }
             document.getElementById('mainContent').innerHTML = html;
         }
